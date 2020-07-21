@@ -41,3 +41,23 @@ body {
   background-attachment: fixed;
   z-index: 2;
 }
+
+#spotify-container{
+  position: absolute;
+  width: 10vw;
+  height: 30vw;
+  border: 2px blue solid;
+  bottom: 100px;
+  right: 100px;
+  z-index: 20;
+
+}
+
+#desktop-text-area{
+  position: absolute;
+  width: 30vw;
+  height: 20vw;
+  top: 100px;
+  left: 100px;
+  z-index: 20;
+}
