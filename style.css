@@ -1,3 +1,12 @@
+body {
+  background-image: url("https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  width: 100vw;
+  height: 100vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1000;
+}
+
 #login-container {
   display: flex;
   position: absolute;
@@ -18,5 +27,8 @@
   width: 100vw;
   height: 100vw;
   border: 2px solid blue;
-  background-color: rgb(193, 109, 196);
+  /* background-color: rgb(193, 109, 196); */
+  background-image: url("https://github.com/2moody/2moody/blob/master/mood_room_desktop.png?raw=true");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
