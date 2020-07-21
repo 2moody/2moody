@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>My Awesome App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" <base href="/">
+
+  {{!-- <link type="text/css" href="style.css" /> --}}
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    #mood-background {
+      position: fixed;
+      background-image: url("https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+      width: 100vw;
+      height: 100vh;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      /* background-size: contain; */
+      z-index: 1;
+      filter: hue-rotate(180deg) saturate(80%) brightness(50%);
+    }
+
+    #login-container {}
+
+    #mood-room-desktop {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      border: 2px solid blue;
+      /* background-color: rgb(193, 109, 196); */
+      background-image: url("https://github.com/ZenMasterOwl/envtest/blob/master/mood_room_desktop.png?raw=true");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      z-index: 2;
+    }
+
+    #spotify-container {
+      position: absolute;
+      width: 10vw;
+      height: 30vw;
+      border: 2px blue solid;
+      bottom: 100px;
+      right: 100px;
+      z-index: 20;
+
+    }
+
+    #desktop-text-area {
+      position: absolute;
+      width: 30vw;
+      height: 20vw;
+      top: 100px;
+      left: 100px;
+      z-index: 20;
+    }
+  </style>
+</head>
+
+<body>
+  {{!-- <iframe src="https://giphy.com/embed/Kx82Lvb7wcYNO" style="z-index: 999" width="50%" frameBorder=" 0"
+    class="giphy-embed" allowFullScreen></iframe> --}}
+
+  {{{body}}}
+  <script src="app.js"></script>
+  {{!-- <script src="https://sdk.scdn.co/spotify-player.js"></script> --}}
+
+</body>
+
+</html>
