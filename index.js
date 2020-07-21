@@ -1,42 +1,74 @@
-const express = require('express');
+require("dotenv").config();
+const axios = require("axios");
+const express = require("express");
+const Spotify = require("node-spotify-api");
 const app = express();
-const port = 3000;
+
+const port = process.env.PORT || 3000;
 
 //Loads the handlebars module
-const handlebars = require('express-handlebars');
+const handlebars = require("express-handlebars");
+
+//Declare variables for sensitive data
+SPOTIFY_CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
+
+//Start server
+app.listen(port, () => console.log(`App listening to port ${port}`));
 
 //Sets our app to use the handlebars engine
 // app.set('view engine', 'handlebars');
-//instead of app.set('view engine', 'handlebars'); 
-app.set('view engine', 'hbs');
+//instead of app.set('view engine', 'handlebars');
+app.set("view engine", "hbs");
 
-app.engine('hbs', handlebars({
-  layoutsDir: __dirname + '/views/layouts',
-  extname: 'hbs',
-  defaultLayout: 'index',
-  //new configuration parameter
-  // partialsDir: __dirname + '/views/partials/'
-}));
+app.engine(
+  "hbs",
+  handlebars({
+    layoutsDir: __dirname + "/views/layouts",
+    extname: "hbs",
+    defaultLayout: "index",
+    //new configuration parameter
+    // partialsDir: __dirname + '/views/partials/'
+  })
+);
 
 //
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + "/public"));
 
-app.get('/home', (req, res) => {
-  res.render('login', {
-    layout: 'index',
+app.get("/home", (req, res) => {
+  res.render("login", {
+    layout: "index",
   });
 });
 
-app.get('/register', (req, res) => {
-  res.render('register', {
-    layout: 'index',
+app.get("/register", (req, res) => {
+  res.render("register", {
+    layout: "index",
   });
 });
 
-app.get('/app', (req, res) => {
-  res.render('app', {
-    layout: 'index',
-  })
-})
+app.get("/app", (req, res) => {
+  res.render("app", {
+    layout: "index",
+  });
+});
 
-app.listen(port, () => console.log(`App listening to port ${port}`));
+let spotify = new Spotify({
+  id: SPOTIFY_CLIENT_ID,
+  secret: SPOTIFY_CLIENT_SECRET,
+});
+// don't hard code this in final project
+let artistId = "6FBDaR13swtiWwGhX1WQsP";
+
+//Data routes - return data
+//q: keyword type: playlist
+app.get("/song/:mood", function (req, res) {
+  spotify
+    .request(`https://api.spotify.com/v1/artists/${artistId}/albums`)
+    .then(function (data) {
+      res.json(data);
+    })
+    .catch(function (err) {
+      console.error("Error occurred: " + err);
+    });
+});

@@ -22,13 +22,21 @@ function eventHandler(event) {
 }
 
 function spotifyManager() {
-  console.log("poo")
+  //it knows who rendered it
+  fetch("/song")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
 
 function registerManager() {
-  window.location.pathname = "/register"
+  window.location.pathname = "/register";
 }
 
 function appManager() {
-  window.location.pathname = "/app"
+  window.location.pathname = "/app";
 }
+//3 part question 1)
+
+//2)
+
+//3)
