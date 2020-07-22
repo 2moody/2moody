@@ -25,6 +25,7 @@ body {
 
 #controls img:hover {
   filter: invert();
+  cursor: pointer;
 }
 
 #mood-background {
