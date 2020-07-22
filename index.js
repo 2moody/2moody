@@ -35,7 +35,7 @@ app.engine(
 //
 app.use(express.static(__dirname + "/public"));
 
-app.get("/home", (req, res) => {
+app.get("/login", (req, res) => {
   res.render("login", {
     layout: "index",
   });

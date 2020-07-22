@@ -15,6 +15,10 @@ body {
   margin: 0;
 }
 
+.auth-views{
+  
+}
+
 #mood-background {
   position: fixed;
   background-image: url("https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
@@ -22,37 +26,19 @@ body {
   height: 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background-size: contain; */
   z-index: 1;
   filter: hue-rotate(180deg) saturate(80%) brightness(50%);
 }
 
 #login-container {
-  display: flex;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  border: 2px solid red;
-  z-index: 1;
-  background-color: rebeccapurple;
-  visibility: hidden;
+
 }
 
-#login-container:hover {
-  visibility: hidden;
-}
 
 #mood-room-desktop {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  border: 2px solid blue;
-  /* background-color: rgb(193, 109, 196); */
-  background-image: url("https://github.com/ZenMasterOwl/envtest/blob/master/mood_room_desktop.png?raw=true");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   z-index: 2;
+  pointer-events: none;
 }
 
 #spotify-container {
@@ -68,9 +54,48 @@ body {
 
 #desktop-text-area {
   position: absolute;
-  width: 30vw;
-  height: 20vw;
-  top: 100px;
-  left: 100px;
-  z-index: 20;
+  z-index: 2;
+  padding: 22px;
+  resize: none;
+  border-radius: 1%;
+
+}
+
+@media screen and (max-width: 2400px){
+  #mood-room-desktop{
+    width: 1800px;
+    
+  }
+  #desktop-text-area{
+    width: 660px;
+    height: 360px;
+    top: 200px;
+    left: 275px;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  #mood-room-desktop{
+    width: 1200px;
+    
+  }
+  #desktop-text-area{
+    width: 427px;
+    height: 227px;
+    top: 132px;
+    left: 182px;
+  }
+}
+
+@media screen and (max-width: 650px){
+  #mood-room-desktop{
+    width: 600px;
+    
+  }
+  #desktop-text-area{
+    width: 194px;
+    height: 94px;
+    top: 66px;
+    left: 91px;
+  }
 }
