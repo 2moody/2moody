@@ -15,8 +15,16 @@ body {
   margin: 0;
 }
 
-.auth-views{
-  
+.auth-views {
+}
+#controls {
+  filter: opacity(75%);
+  position: absolute;
+  z-index: 5;
+}
+
+#controls img:hover {
+  filter: invert();
 }
 
 #mood-background {
@@ -27,13 +35,14 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   z-index: 1;
-  filter: hue-rotate(180deg) saturate(80%) brightness(50%);
+  filter: hue-rotate(0deg);
 }
 
 #login-container {
-
 }
-
+#mood-room-container {
+  filter: brightness(80%);
+}
 
 #mood-room-desktop {
   position: absolute;
@@ -49,53 +58,70 @@ body {
   bottom: 100px;
   right: 100px;
   z-index: 20;
-
 }
 
 #desktop-text-area {
+  font-size: 1.5em;
   position: absolute;
   z-index: 2;
   padding: 22px;
   resize: none;
   border-radius: 1%;
-
 }
 
-@media screen and (max-width: 2400px){
-  #mood-room-desktop{
+@media screen and (max-width: 2400px) {
+  #mood-room-desktop {
     width: 1800px;
-    
   }
-  #desktop-text-area{
+  #desktop-text-area {
     width: 660px;
     height: 360px;
     top: 200px;
-    left: 275px;
+    left: 273px;
+  }
+  #controls {
+    top: 630px;
+    left: 525px;
+  }
+  #controls img {
+    width: 60px;
   }
 }
 
-@media screen and (max-width: 1200px){
-  #mood-room-desktop{
+@media screen and (max-width: 1200px) {
+  #mood-room-desktop {
     width: 1200px;
-    
   }
-  #desktop-text-area{
+  #desktop-text-area {
     width: 427px;
     height: 227px;
     top: 132px;
     left: 182px;
   }
+  #controls {
+    top: 420px;
+    left: 350px;
+  }
+  #controls img {
+    width: 40px;
+  }
 }
 
-@media screen and (max-width: 650px){
-  #mood-room-desktop{
+@media screen and (max-width: 650px) {
+  #mood-room-desktop {
     width: 600px;
-    
   }
-  #desktop-text-area{
+  #desktop-text-area {
     width: 194px;
     height: 94px;
     top: 66px;
     left: 91px;
+  }
+  #controls {
+    top: 210px;
+    left: 175px;
+  }
+  #controls img {
+    width: 20px;
   }
 }

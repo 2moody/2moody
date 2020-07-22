@@ -32,7 +32,8 @@ app.engine(
   })
 );
 
-//
+// 2moody/public
+// 2moody/public/imgs/filename
 app.use(express.static(__dirname + "/public"));
 
 app.get("/login", (req, res) => {
