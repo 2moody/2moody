@@ -4,9 +4,11 @@ let textFontColorIndex = 0;
 let textBgColorIndex = 0;
 let hueRotateIndex = 0;
 let brightnessIndex = 7;
+const moodInput = document.getElementById("mood-input");
 const moodBackground = document.getElementById("mood-background");
 const moodRoomContainer = document.getElementById("mood-room-container");
 const desktopTextarea = document.getElementById("desktop-text-area");
+const spotifyPlayer = document.getElementById("spotify-player");
 
 const appleBtn = document.getElementById("apple-btn");
 const incrementBtn = document.getElementById("increment-btn");
@@ -46,7 +48,8 @@ function eventHandler(event) {
   event.preventDefault();
   // console.log(event);
   switch (event.target.id) {
-    case "spotify-container":
+    case "search-btn":
+      console.log("switch statment");
       spotifyManager();
       break;
     case "register-btn":
@@ -95,14 +98,21 @@ function eventHandler(event) {
       break;
   }
 }
-
 function spotifyManager() {
+  console.log("spotifyManager");
   //it knows who rendered it
-  fetch("/song")
+  fetch(`/song/${moodInput.value}`)
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => updateSpotifyPlayer(data));
 }
-
+function updateSpotifyPlayer(data) {
+  let url = data.playlists.items[0].external_urls.spotify;
+  // "https://open.spotify.com/embed/playlist/37i9dQZF1DWXRqgorJj26U";
+  // "https://open.spotify.com" _+ "/embed" + "/playlist/37i9dQZF1DWXRqgorJj26U";
+  //loop over the string until  index at end of  "com" = firstpart
+  let result = url.slice(0, 24) + "/embed" + url.slice(24, url.length);
+  spotifyPlayer.setAttribute("src", result);
+}
 function registerManager() {
   window.location.pathname = "/register";
 }

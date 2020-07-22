@@ -58,14 +58,14 @@ let spotify = new Spotify({
   id: SPOTIFY_CLIENT_ID,
   secret: SPOTIFY_CLIENT_SECRET,
 });
-// don't hard code this in final project
-let artistId = "6FBDaR13swtiWwGhX1WQsP";
 
 //Data routes - return data
 //q: keyword type: playlist
 app.get("/song/:mood", function (req, res) {
+  let moodKeyword = req.params.mood
+  console.log("derp" + moodKeyword);
   spotify
-    .request(`https://api.spotify.com/v1/artists/${artistId}/albums`)
+    .request(`https://api.spotify.com/v1/search?q=${moodKeyword}&type=playlist`)
     .then(function (data) {
       res.json(data);
     })
