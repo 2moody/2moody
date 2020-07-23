@@ -1,4 +1,6 @@
 iframe {
+  width: 160px;
+  height: 80px;
   position: absolute;
   z-index: 50;
 }
@@ -6,6 +8,10 @@ iframe {
 body {
   padding: 0;
   margin: 0;
+}
+#search-form {
+  position: absolute;
+  z-index: 5;
 }
 
 #controls {
@@ -40,14 +46,14 @@ body {
   pointer-events: none;
 }
 
-#spotify-container {
+/* #spotify-container {
   position: absolute;
   width: 10vw;
   height: 30vw;
   bottom: 10px;
   right: 500px;
   z-index: 20;
-}
+} */
 
 #desktop-text-area {
   font-size: 1.5em;
@@ -119,6 +125,12 @@ body {
   #controls img {
     width: 60px;
   }
+  iframe {
+    width: 160px;
+    height: 80px;
+    top: 400px;
+    left: 400px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -141,6 +153,12 @@ body {
   #controls img {
     width: 40px;
   }
+  iframe {
+    width: 160px;
+    height: 80px;
+    top: 80vh;
+    left: 70vw;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -162,5 +180,11 @@ body {
 
   #controls img {
     width: 20px;
+  }
+  iframe {
+    width: 80px;
+    height: 80px;
+    bottom: 80vh;
+    left: 70vw;
   }
 }
