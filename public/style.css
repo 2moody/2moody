@@ -1,25 +1,13 @@
-/* li {
-  font-size: 2rem;
-  width: 300px;
-  margin: 4px;
-  padding: 4px;
-  list-style: none;
-}
-
-img {
-  width: 50%;
-} */
 iframe {
   position: absolute;
   z-index: 50;
 }
+
 body {
   padding: 0;
   margin: 0;
 }
 
-.auth-views {
-}
 #controls {
   filter: opacity(75%);
   position: absolute;
@@ -42,8 +30,6 @@ body {
   filter: hue-rotate(0deg);
 }
 
-#login-container {
-}
 #mood-room-container {
   filter: brightness(80%);
 }
@@ -58,7 +44,6 @@ body {
   position: absolute;
   width: 10vw;
   height: 30vw;
-  /* border: 2px blue solid; */
   bottom: 10px;
   right: 500px;
   z-index: 20;
@@ -73,20 +58,64 @@ body {
   border-radius: 1%;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 200px auto;
+  width: 300px;
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+  background-image: url("https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+}
+
+.input-container h1 {
+  font-family: monospace;
+  margin-bottom: 30px;
+}
+
+.font-styles {
+  font-family: monospace;
+  font-size: 1.3em;
+}
+
+.input-container input {
+  padding: 7px;
+  margin: 5px;
+}
+
+.input-btn {
+  background-color: dodgerblue;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 7px;
+  margin: 7px;
+  cursor: pointer;
+  font-family: monospace;
+  color: white;
+}
+
+.input-btn:hover {
+  transform: scale(1.2);
+}
+
 @media screen and (max-width: 2400px) {
   #mood-room-desktop {
     width: 1800px;
   }
+
   #desktop-text-area {
     width: 660px;
     height: 360px;
     top: 200px;
     left: 273px;
   }
+
   #controls {
     top: 630px;
     left: 525px;
   }
+
   #controls img {
     width: 60px;
   }
@@ -96,16 +125,19 @@ body {
   #mood-room-desktop {
     width: 1200px;
   }
+
   #desktop-text-area {
     width: 427px;
     height: 227px;
     top: 132px;
     left: 182px;
   }
+
   #controls {
     top: 420px;
     left: 350px;
   }
+
   #controls img {
     width: 40px;
   }
@@ -115,16 +147,19 @@ body {
   #mood-room-desktop {
     width: 600px;
   }
+
   #desktop-text-area {
     width: 194px;
     height: 94px;
     top: 66px;
     left: 91px;
   }
+
   #controls {
     top: 210px;
     left: 175px;
   }
+
   #controls img {
     width: 20px;
   }
