@@ -10,9 +10,6 @@ const moodRoomContainer = document.getElementById("mood-room-container");
 const desktopTextarea = document.getElementById("desktop-text-area");
 const spotifyPlayer = document.getElementById("spotify-player");
 const attributeStatus = document.getElementById("attribute-status");
-const appleBtn = document.getElementById("apple-btn");
-const incrementBtn = document.getElementById("increment-btn");
-const decrementBtn = document.getElementById("decremen-btn");
 
 const colorValues = [
   "rgb(255, 255, 255)",
@@ -40,8 +37,8 @@ const brightnessValues = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 const propsArray = [
   "brightness",
   "backgroundColor",
-  "textareaBackgroundColor",
   "textareaFontColor",
+  "textareaBackgroundColor",
 ];
 
 function eventHandler(event) {
