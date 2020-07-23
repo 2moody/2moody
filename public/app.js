@@ -52,7 +52,13 @@ function eventHandler(event) {
       registerManager();
       break;
     case "sign-up-btn":
-      appManager();
+      appManager(event);
+      break;
+    case "sign-in-btn":
+      navigateToApp();
+      break;
+    case "back-to-login-btn":
+      navigateToLoginPage();
       break;
     case "decrement-btn":
       switch (propsArray[propsIndex]) {
@@ -111,8 +117,34 @@ function registerManager() {
   window.location.pathname = "/register";
 }
 
-function appManager() {
-  window.location.pathname = "/app";
+function navigateToApp() {
+  window.location.pathname = "/app"
+}
+
+function navigateToLoginPage() {
+  console.log("navigate to login page working");
+  window.location.pathname = "/login";
+}
+
+function appManager(e) {
+  e.preventDefault();
+  let name = document.getElementById("register-name");
+  let email = document.getElementById("register-email");
+  let password = document.getElementById("register-password");
+
+  if (name.value === "") {
+    alert("name cannot be blank");
+  }
+
+  if (email.value === "") {
+    alert("email cannot be blank");
+  }
+
+  if (password.value === "") {
+    console.log("password cannot be blank");
+  }
+
+  // window.location.pathname = "/app";
 }
 
 function changeProperty() {
