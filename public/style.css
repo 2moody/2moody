@@ -10,6 +10,13 @@ iframe {
 body {
   padding: 0;
   margin: 0;
+  background-color: rgb(6, 33, 60);
+  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Nyan-Cat-Photo.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+
+  background-size: 100%;
 }
 #attribute-status {
   font-family: "Courier New", Courier, monospace;
