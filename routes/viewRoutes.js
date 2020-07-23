@@ -14,6 +14,10 @@ SPOTIFY_CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 // const Router = express.Router
 
 //View routes
+Router.get("/", (req, res) => {
+  res.redirect("/login");
+});
+
 Router.get("/login", (req, res) => {
   res.render("login", {
     layout: "index",
@@ -40,7 +44,7 @@ let spotify = new Spotify({
 //Data routes
 //q: keyword type: playlist
 Router.get("/song/:mood", function (req, res) {
-  let moodKeyword = req.params.mood
+  let moodKeyword = req.params.mood;
   console.log("derp" + moodKeyword);
   spotify
     .request(`https://api.spotify.com/v1/search?q=${moodKeyword}&type=playlist`)
