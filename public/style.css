@@ -9,7 +9,7 @@
 img {
   width: 50%;
 } */
-iframe{
+iframe {
   position: absolute;
   z-index: 50;
 }
@@ -58,9 +58,9 @@ body {
   position: absolute;
   width: 10vw;
   height: 30vw;
-  border: 2px blue solid;
-  bottom: 100px;
-  right: 100px;
+  /* border: 2px blue solid; */
+  bottom: 10px;
+  right: 500px;
   z-index: 20;
 }
 
