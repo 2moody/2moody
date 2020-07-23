@@ -1,9 +1,7 @@
+// Listen for clicks on the whole document
 document.addEventListener("click", eventHandler);
-let propsIndex = 0;
-let textFontColorIndex = 0;
-let textBgColorIndex = 0;
-let hueRotateIndex = 0;
-let brightnessIndex = 7;
+
+// Variables for html elements
 const moodInput = document.getElementById("mood-input");
 const moodBackground = document.getElementById("mood-background");
 const moodRoomContainer = document.getElementById("mood-room-container");
@@ -11,6 +9,14 @@ const desktopTextarea = document.getElementById("desktop-text-area");
 const spotifyPlayer = document.getElementById("spotify-player");
 const attributeStatus = document.getElementById("attribute-status");
 
+// Variables for navigating style collections
+let propsIndex = 0;
+let textFontColorIndex = 0;
+let textBgColorIndex = 0;
+let hueRotateIndex = 0;
+let brightnessIndex = 7;
+
+// Collections of style presets for user customization options
 const colorValues = [
   "rgb(255, 255, 255)",
   "rgb(0, 0, 0)",
@@ -30,17 +36,16 @@ const colorValues = [
   "rgb(218, 111, 111",
   "rgb(126, 60, 60)",
 ];
-
-const hueRotateValues = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
-const brightnessValues = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
-
 const propsArray = [
   "brightness",
   "backgroundColor",
   "textareaFontColor",
   "textareaBackgroundColor",
 ];
+const brightnessValues = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+const hueRotateValues = [0, 36, 72, 108, 144, 180, 216, 252, 288, 324];
 
+// Click event handler that delegates functionality based on clicked item
 function eventHandler(event) {
   event.preventDefault();
 
@@ -101,6 +106,15 @@ function eventHandler(event) {
   }
 }
 
+// Routing callbacks for click events
+function appManager() {
+  window.location.pathname = "/app";
+}
+
+function registerManager() {
+  window.location.pathname = "/register";
+}
+
 function spotifyManager() {
   fetch(`/song/${moodInput.value}`)
     .then((response) => response.json())
@@ -113,12 +127,13 @@ function updateSpotifyPlayer(data) {
   spotifyPlayer.setAttribute("src", result);
 }
 
+// Style modification callbacks for click events
 function registerManager() {
   window.location.pathname = "/register";
 }
 
 function navigateToApp() {
-  window.location.pathname = "/app"
+  window.location.pathname = "/app";
 }
 
 function navigateToLoginPage() {

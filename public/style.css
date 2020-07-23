@@ -1,43 +1,28 @@
+body {
+  background-attachment: fixed;
+  background-color: rgb(6, 33, 60);
+  background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Nyan-Cat-Photo.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 iframe {
-  width: 160px;
+  bottom: 0;
+  right: 0;
   height: 80px;
+  width: 160px;
   position: absolute;
   z-index: 50;
-  bottom: 0;
-  right: 0;
 }
 
-body {
-  padding: 0;
-  margin: 0;
-  background-color: rgb(6, 33, 60);
-  background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Nyan-Cat-Photo.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center bottom;
-
-  background-size: 100%;
-}
 #attribute-status {
   font-family: "Courier New", Courier, monospace;
-
+  padding: 20px;
   position: absolute;
   z-index: 22;
-  padding: 20px;
-}
-#search-btn {
-  border: none;
-  border-radius: 5%;
-}
-#mood-input {
-  border: none;
-  border-radius: 5%;
-}
-#search-form {
-  position: absolute;
-  z-index: 5;
-  bottom: 0;
-  right: 0;
 }
 
 #controls {
@@ -47,19 +32,28 @@ body {
 }
 
 #controls img:hover {
-  filter: invert();
   cursor: pointer;
+  filter: invert();
+}
+
+#desktop-text-area {
+  border-radius: 1%;
+  font-size: 1.5em;
+  padding: 22px;
+  position: absolute;
+  resize: none;
+  z-index: 2;
 }
 
 #mood-background {
-  position: fixed;
-  background-image: url("https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  width: 100vw;
-  height: 100vh;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  z-index: 1;
+  background-image: url("https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-repeat: no-repeat;
   filter: hue-rotate(0deg);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 1;
 }
 
 #mood-room-container {
@@ -68,33 +62,36 @@ body {
 
 #mood-room-desktop {
   position: absolute;
-  z-index: 2;
   pointer-events: none;
+  z-index: 2;
 }
 
-#desktop-text-area {
-  font-size: 1.5em;
+#mood-input {
+  border: none;
+  border-radius: 5%;
+}
+
+#search-btn {
+  border: none;
+  border-radius: 5%;
+}
+
+#search-form {
+  bottom: 0;
+  right: 0;
   position: absolute;
-  z-index: 2;
-  padding: 22px;
-  resize: none;
-  border-radius: 1%;
+  z-index: 5;
 }
 
 .input-container {
+  background-image: url("https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   display: flex;
+  border: 1px solid black;
   flex-direction: column;
   margin: 200px auto;
-  width: 300px;
-  border: 1px solid black;
   padding: 10px;
   text-align: center;
-  background-image: url("https://images.pexels.com/photos/3255761/pexels-photo-3255761.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-}
-
-.input-container h1 {
-  font-family: monospace;
-  margin-bottom: 30px;
+  width: 300px;
 }
 
 .font-styles {
@@ -102,132 +99,128 @@ body {
   font-size: 1.3em;
 }
 
-.input-container input {
-  padding: 7px;
-  margin: 5px;
-}
-
 .input-btn {
   background-color: dodgerblue;
   border: 1px solid white;
   border-radius: 8px;
-  padding: 7px;
-  margin: 7px;
+  color: white;
   cursor: pointer;
   font-family: monospace;
-  color: white;
+  padding: 7px;
+  margin: 7px;
 }
 
 .input-btn:hover {
   transform: scale(1.2);
 }
 
+.input-container h1 {
+  font-family: monospace;
+  margin-bottom: 30px;
+}
+
+.input-container input {
+  margin: 5px;
+  padding: 7px;
+}
+
 @media screen and (max-width: 2400px) {
-  #mood-room-desktop {
-    width: 1800px;
-  }
-
-  #desktop-text-area {
-    width: 660px;
-    height: 360px;
-    top: 200px;
-    left: 273px;
-  }
-
-  #controls {
-    top: 630px;
-    left: 525px;
-  }
-
-  #controls img {
-    width: 60px;
-  }
   iframe {
+    bottom: 0;
+    right: 0;
     margin: 60px;
     width: 160px;
     height: 80px;
-    /* top: 700px;
-    left: 900px; */
-    bottom: 0;
-    right: 0;
+  }
+  #attribute-status {
+    left: 273px;
+    top: 520px;
+  }
+  #controls {
+    left: 525px;
+    top: 630px;
+  }
+  #controls img {
+    width: 60px;
+  }
+  #desktop-text-area {
+    left: 273px;
+    top: 200px;
+    height: 360px;
+    width: 660px;
+  }
+  #mood-room-desktop {
+    width: 1800px;
   }
   #search-form {
     margin: 30px 60px;
   }
-  #attribute-status {
-    top: 520px;
-    left: 273px;
-  }
 }
 
 @media screen and (max-width: 1200px) {
-  #mood-room-desktop {
-    width: 1200px;
+  iframe {
+    bottom: 10px;
+    margin: 40px;
+    height: 80px;
+    width: 160px;
   }
-
-  #desktop-text-area {
-    width: 427px;
-    height: 227px;
-    top: 132px;
+  #attribute-status {
     left: 182px;
+    top: 323px;
   }
-
   #controls {
-    top: 420px;
     left: 350px;
+    top: 420px;
   }
 
   #controls img {
     width: 40px;
   }
-  iframe {
-    margin: 40px;
-    width: 160px;
-    height: 80px;
-    bottom: 10px;
+  #desktop-text-area {
+    left: 182px;
+    top: 132px;
+    height: 227px;
+    width: 427px;
   }
+  #mood-room-desktop {
+    width: 1200px;
+  }
+
   #search-form {
     margin: 20px 40px;
-  }
-  #attribute-status {
-    top: 323px;
-    left: 182px;
   }
 }
 
 @media screen and (max-width: 650px) {
-  #mood-room-desktop {
-    width: 600px;
+  iframe {
+    margin: 20px;
+    top: 180px;
+    height: 80px;
+    width: 80px;
   }
-
-  #desktop-text-area {
-    width: 194px;
-    height: 94px;
-    top: 66px;
-    left: 91px;
+  #attribute-status {
+    font-size: 0.5em;
+    left: 81px;
+    top: 156px;
   }
-
   #controls {
-    top: 210px;
     left: 175px;
+    top: 210px;
   }
-
   #controls img {
     width: 20px;
   }
-  iframe {
-    margin: 20px;
-    width: 80px;
-    height: 80px;
-    top: 180px;
+  #desktop-text-area {
+    left: 91px;
+    top: 66px;
+    height: 94px;
+    width: 194px;
+  }
+  #mood-room-desktop {
+    width: 600px;
   }
   #search-form {
     margin: 20px 20px;
     top: 270px;
-  }
-  #attribute-status {
-    font-size: 0.5em;
-    top: 156px;
-    left: 81px;
   }
 }
