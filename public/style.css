@@ -3,15 +3,34 @@ iframe {
   height: 80px;
   position: absolute;
   z-index: 50;
+  bottom: 0;
+  right: 0;
 }
 
 body {
   padding: 0;
   margin: 0;
 }
+#attribute-status {
+  font-family: "Courier New", Courier, monospace;
+
+  position: absolute;
+  z-index: 22;
+  padding: 20px;
+}
+#search-btn {
+  border: none;
+  border-radius: 5%;
+}
+#mood-input {
+  border: none;
+  border-radius: 5%;
+}
 #search-form {
   position: absolute;
   z-index: 5;
+  bottom: 0;
+  right: 0;
 }
 
 #controls {
@@ -45,15 +64,6 @@ body {
   z-index: 2;
   pointer-events: none;
 }
-
-/* #spotify-container {
-  position: absolute;
-  width: 10vw;
-  height: 30vw;
-  bottom: 10px;
-  right: 500px;
-  z-index: 20;
-} */
 
 #desktop-text-area {
   font-size: 1.5em;
@@ -126,10 +136,20 @@ body {
     width: 60px;
   }
   iframe {
+    margin: 60px;
     width: 160px;
     height: 80px;
-    top: 400px;
-    left: 400px;
+    /* top: 700px;
+    left: 900px; */
+    bottom: 0;
+    right: 0;
+  }
+  #search-form {
+    margin: 30px 60px;
+  }
+  #attribute-status {
+    top: 520px;
+    left: 273px;
   }
 }
 
@@ -154,10 +174,17 @@ body {
     width: 40px;
   }
   iframe {
+    margin: 40px;
     width: 160px;
     height: 80px;
-    top: 80vh;
-    left: 70vw;
+    bottom: 10px;
+  }
+  #search-form {
+    margin: 20px 40px;
+  }
+  #attribute-status {
+    top: 323px;
+    left: 182px;
   }
 }
 
@@ -182,9 +209,18 @@ body {
     width: 20px;
   }
   iframe {
+    margin: 20px;
     width: 80px;
     height: 80px;
-    bottom: 80vh;
-    left: 70vw;
+    top: 180px;
+  }
+  #search-form {
+    margin: 20px 20px;
+    top: 270px;
+  }
+  #attribute-status {
+    font-size: 0.5em;
+    top: 156px;
+    left: 81px;
   }
 }

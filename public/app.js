@@ -9,7 +9,7 @@ const moodBackground = document.getElementById("mood-background");
 const moodRoomContainer = document.getElementById("mood-room-container");
 const desktopTextarea = document.getElementById("desktop-text-area");
 const spotifyPlayer = document.getElementById("spotify-player");
-
+const attributeStatus = document.getElementById("attribute-status");
 const appleBtn = document.getElementById("apple-btn");
 const incrementBtn = document.getElementById("increment-btn");
 const decrementBtn = document.getElementById("decremen-btn");
@@ -124,6 +124,11 @@ function changeProperty() {
   } else {
     propsIndex = 0;
   }
+  attributeStatus.textContent = `Modifying ${propsArray[propsIndex]}...`;
+  attributeStatus.style.visibility = "visible";
+  setTimeout(() => {
+    attributeStatus.style.visibility = "hidden";
+  }, 1000);
 }
 
 function changeTextBgColor(direction) {
@@ -205,6 +210,7 @@ function setTextBgColor(value) {
 
 function setTextFontColor(value) {
   desktopTextarea.style.color = value;
+  attributeStatus.style.color = value;
 }
 
 function setBackgroundHueRotation(value) {
